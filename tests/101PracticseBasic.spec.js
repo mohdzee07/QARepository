@@ -1,7 +1,7 @@
 import{test,expect} from '@playwright/test'
 import { title } from 'node:process';
 
-test("PractiseTes the new chmages", async({page})=>
+test("123PractiseTes the new chmages", async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     console.log (await page.title());
