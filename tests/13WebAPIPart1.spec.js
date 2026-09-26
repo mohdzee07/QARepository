@@ -13,7 +13,7 @@ test.beforeAll(async () => {
     //2.We create an object ApiUtils class here we are passing the apiContext to the constructor of the class
     const apiUtils = new APiUtils(apiContext, loginPayLoad);
     //3.here we are calling the createOrderId method of the class APiUtils and passing the orerPayLoad to the method
-     response = await ApiOrangeLogin.createOrderId(orerPayLoad); 
+     response = await apiUtils.createOrderId(orerPayLoad); 
 
 });
 

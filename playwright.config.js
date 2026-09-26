@@ -30,7 +30,7 @@ const config =({
    headless : true, // it means it will open the browser
    screenshot: 'on', //captures sc for all the steps
    trace: 'on',
-   ignoreHttpsError : true,
+   ignoreHttpsErrors : true,
 
   },
 });

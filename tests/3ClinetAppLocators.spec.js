@@ -2,7 +2,7 @@ import {test,expect}  from "@playwright/test"
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-test("@Web ClientAppLocators", async({page})=>
+test("ClientAppLocators", async({page})=>
 {
    
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");

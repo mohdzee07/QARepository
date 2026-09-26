@@ -1,7 +1,7 @@
 import {test ,expect} from '@playwright/test';
 
 
-test("UI COntrols", async({page})=>
+test("@Web UI COntrols", async({page})=>
 {
 
     const userName = page.locator("input#username")
