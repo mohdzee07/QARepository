@@ -22,7 +22,8 @@ const config =({
      timeout: 5000,   //given 5seconds as explicit tiemout for expect
   },
 
-   reporter: process.env.CI ? 'blob' : 'html', //to generate html reports
+  reporter: [['html'],['blob'],['github']],
+  //reporter: process.env.CI ? 'blob' : 'html', //to generate html reports
 
   use:{
 

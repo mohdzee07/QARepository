@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const { customtest, email } = require('../utils/login-fixture');
+const { customtest, email } = require('../Fixtures/login-fixture');
 
 customtest('@API  Client App login2', async ({ loggedInPage: page }) => {
    //js file- Login js, DashboardPage
