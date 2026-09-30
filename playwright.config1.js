@@ -14,7 +14,7 @@ import { permission, report } from 'node:process';
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = ({
-  testDir: './test',
+  testDir: './tests',
   retries:1, //rexectures the flaky test once after failing
   workers:7,
   timeout: 30 * 1000,//given 30econdss as explicit tiemout for each test step 

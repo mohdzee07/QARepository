@@ -1,32 +1,10 @@
-const { test, expect } = require('@playwright/test');
- 
-let webContext;
-const email = "mehu1414@gmail.com";
- test.beforeAll(async({browser})=>
-{
-   const context = await browser.newContext();
-   const page = await context.newPage();
- 
-    await page.goto("https://rahulshettyacademy.com/client");
-   await page.locator("#userEmail").fill(email);
-   await page.locator("#userPassword").fill("Mehu@123");
-   await page.locator("[value='Login']").click();
-   await page.waitForLoadState('networkidle');
-   //storageState method will create a json file which will have the details of the 
-   //local storage and cookies and we can use this json file to create a new context and use it in our test cases
-   await context.storageState({ path: 'state.json' });
-   webContext = await browser.newContext({ storageState: 'state.json'});
+const { expect } = require('@playwright/test');
+const { customtest, email } = require('../utils/login-fixture');
 
-})
-
-test('@API  Client App login2', async () => {
+customtest('@API  Client App login2', async ({ loggedInPage: page }) => {
    //js file- Login js, DashboardPage
   
    const productName = 'ZARA COAT 3';
-   //here the webcontext inject the storagestate details and helps to invoke a browser
-   const page=  await webContext.newPage();
-   await page.goto("https://rahulshettyacademy.com/client");
-
    const products = page.locator(".card-body");
   
    const titles = await page.locator(".card-body b").allTextContents();
