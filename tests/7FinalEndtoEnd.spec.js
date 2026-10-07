@@ -14,7 +14,7 @@ const dataset = JSON.parse(JSON.stringify(require("../testdata/EndtoEndTestData.
 
 //here we createad a fr loop for paramterised test data
 for (const [index, data] of dataset.entries()) {
-   test(`App login for ${data.productName} [${index}]`, async ({ page }) => {
+   test(`Ap123p login for ${data.productName} [${index}]`, async ({ page }) => {
 
 
       //js file- Login js, DashboardPage
