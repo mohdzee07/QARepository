@@ -15,7 +15,9 @@ const customtest = base.extend({
          await loginPage.locator('#userEmail').fill(email);
          await loginPage.locator('#userPassword').fill(password);
          await loginPage.locator("[value='Login']").click();
+
          await loginPage.waitForLoadState('networkidle');
+         //await loginPage.locator('.dashboard').waitFor();
          await loginContext.storageState({ path: storageStatePath });
       } finally {
          await loginContext.close();

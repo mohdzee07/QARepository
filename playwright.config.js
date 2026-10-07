@@ -16,7 +16,7 @@ import { report } from 'node:process';
 const config =({
   testDir: './tests',
   fullyParallel: false,
-  timeout: 30*1000,//given 30econdss as explicit tiemout for each test step 
+  timeout: 60*1000,//given 30econdss as explicit tiemout for each test step 
   expect:
   {
      timeout: 5000,   //given 5seconds as explicit tiemout for expect
@@ -29,9 +29,13 @@ const config =({
 
    browserName : 'chromium',
    headless : true, // it means it will open the browser
-   screenshot: 'on', //captures sc for all the steps
-   trace: 'on',
    ignoreHttpsErrors : true,
+   screenshot: 'on', //stored in test-results folder post execution
+   trace: 'retain-on-failure', //stored in playwright-results folder post execution
+   //viewport : {width:720,height:720},//this opens browser in the provided width and height
+   ignoreHttpsError : true, //this is used to handle SSL cert issue
+   permission :['geolocation'] // thi is used to accpet the "Allow Location" popup
+          //...devices['']
 
   },
 });

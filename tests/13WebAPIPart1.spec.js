@@ -36,6 +36,8 @@ test('@API apii Login', async ({ page }) => {
 
     await page.goto("https://rahulshettyacademy.com/client/");
 
+    await page.pause();
+
     await page.locator("button[routerlink*='myorders']").click();
     await page.locator("tbody").waitFor();
     const rows = await page.locator("tbody tr");
