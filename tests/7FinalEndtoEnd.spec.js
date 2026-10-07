@@ -7,13 +7,16 @@ const { Checkoutpage } = require('../pageobjects/Checkoutpage')
 const { OrderReviewPage } = require('../pageobjects/OrderReviewPage')
 
 //JSON test data file is converted to JSON.stringify from JSON-->JSON string and from JSON string-->Js Object usong JSON.parse
-
+//JSON.stringify() converts a JavaScript object into a JSON string, 
+// and JSON.parse() converts that string back into a new JavaScript object
 const dataset = JSON.parse(JSON.stringify(require("../testdata/EndtoEndTestData.json")));
 
 
 //here we createad a fr loop for paramterised test data
 for (const [index, data] of dataset.entries()) {
    test(`App login for ${data.productName} [${index}]`, async ({ page }) => {
+
+
       //js file- Login js, DashboardPage
 
       const products = page.locator(".card-body");
@@ -41,8 +44,6 @@ for (const [index, data] of dataset.entries()) {
       const ordersReview = new OrderReviewPage(page)
       await ordersReview.OrderDetails();
       await ordersReview.OrderHistoryPage();
-
-
 
    })
 }

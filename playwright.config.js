@@ -15,7 +15,7 @@ import { report } from 'node:process';
  */
 const config =({
   testDir: './tests',
-  fullyParallel: true,
+  fullyParallel: false,
   timeout: 30*1000,//given 30econdss as explicit tiemout for each test step 
   expect:
   {
